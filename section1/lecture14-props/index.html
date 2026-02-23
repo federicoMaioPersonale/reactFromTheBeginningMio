@@ -11,6 +11,7 @@
     <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
     <script src="./Card.js" type ="text/babel"></script>
+    <script src="./data.js" type ="text/babel"></script>
 </head>
 <body>
 
@@ -18,7 +19,12 @@
 
     <script type="text/babel">
         ReactDOM.render(
-            <Card/>,
+            <div className="row">
+                <Card name = {data[0].course} title ={data[0].instructor}/>
+                <Card name = {data[1].course} title ={data[1].instructor}/>
+                <Card name = {data[2].course} title ={data[2].instructor}/>
+                <Card name = {data[3].course} title ={data[3].instructor}/>
+            </div>,
             document.getElementById('root')
         );
 
