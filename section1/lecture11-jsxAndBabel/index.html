@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 
@@ -15,8 +16,30 @@
     <div id="root"></div>
     <script type="text/babel">
 
+        const title = "React From the Beginning";
+        const name = "Robert Bunch";
+        const saleOn = false;
+
+        const markUp = 
+            <div className="row">
+                <div className="col s2">
+                    <div className="card hoverable small">
+                        <div className="card-image">
+                            <img src="https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U" />
+                        </div>
+                        <div className="card-content">
+                            <p>{title}</p>
+                            <p>{name}</p>
+                        </div>
+                        <div className="card-action">
+                            <a href="#">${saleOn? 9.99 : 59.99}</a>
+                        </div>
+                    </div>
+                </div>	
+            </div>
+
         ReactDOM.render(
-            <h1>Sanity chech</h1>,
+            markUp,
             document.getElementById('root')
         );
 
