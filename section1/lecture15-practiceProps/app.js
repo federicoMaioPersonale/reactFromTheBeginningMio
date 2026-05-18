@@ -4,10 +4,12 @@
 
 ReactDOM.render(
     <div className="row">
-        <Card name = {data[0].course} title ={data[0].instructor} image={data[0].image}/>
-        <Card name = {data[1].course} title ={data[1].instructor} image={data[0].image}/>
-        <Card name = {data[2].course} title ={data[2].instructor} image={data[0].image}/>
-        <Card name = {data[3].course} title ={data[3].instructor} image={data[0].image}/>
-    </div>,
+        {/* il prop è data, poi l'oggetto che viene passato come prop si chiama data
+        e fa rigferimento a data.js */}
+        <Card data = {data[0]}/>
+        <Card data = {data[1]}/>
+        <Card data = {data[2]}/>
+        <Card data = {data[3]}/>
+        </div>,
     document.getElementById('root')
 );
