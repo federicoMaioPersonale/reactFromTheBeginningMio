@@ -1,4 +1,6 @@
 function Card(props){
+    // non cambiare props qui perchè la proprietà della card va
+    // gestita nell'index
     console.log(props);
     return(
         <div className="col s2">
