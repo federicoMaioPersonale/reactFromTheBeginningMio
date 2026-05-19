@@ -36,14 +36,6 @@ const data = [
     },
 ]
 
-// let roba = data.map((icon,title,i)=>{
-//     return(
-//         <CatNav icon = {icon}
-//                 title = {title} 
-//                 key = {i}/>
-//     )
-// })
-
 ReactDOM.render(
     <CatNav data={data}/>,
     document.getElementById("root")
