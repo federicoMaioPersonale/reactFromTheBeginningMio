@@ -13,7 +13,7 @@ class App extends Component {
     // non si sa quando arriva e this.state.temp potrebbe essere letto e compilato
     // prima della response, quindi tocca usare un altro metodo
     
-    // const url = 'https://api.openweathermap.org/data/2.5/weather?q=London&units=imperial&appid=19563a6d4ec2155deb4ba978d9d1d8dc'
+    // metti url qui come commento
     // // stiamo facendo una HTTP request GET verso la url. quando la richiesta è
     // // completata, verrà eseguito il codice nel .then
     // axios.get(url).then((resp)=>{
@@ -29,7 +29,7 @@ class App extends Component {
   // componentDidMount viene fatto partire. parte così anche la richiesta: dopo che è stata fatta la richiesta
   // viene ri-fatto un render()
   componentDidMount(){
-    const url = 'https://api.openweathermap.org/data/2.5/weather?q=London&units=imperial&appid=19563a6d4ec2155deb4ba978d9d1d8dc'
+        // metti url qui
     // stiamo facendo una HTTP request GET verso la url. quando la richiesta è
     // completata, verrà eseguito il codice nel .then
     axios.get(url).then((resp)=>{
