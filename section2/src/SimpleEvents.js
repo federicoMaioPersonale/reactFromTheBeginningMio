@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 
+// passiamo agli eventi degli oggetti che vengono chiamati effettivamente 
+// all'azione definita
 class SimpleEvents extends Component{
 
     handleClick(){
@@ -10,6 +12,8 @@ class SimpleEvents extends Component{
         console.log("User changed the input!!")
     }
 
+    // l'evento è una proprietà di JS che permette, ad esempio con
+    // preventDefault, al click enter del form, di non andare alla pagina successiva.
     handleSumbit(event){
         console.log("Form submitted!")
         event.preventDefault();
