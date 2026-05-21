@@ -6,6 +6,19 @@ class Modal extends Component{
     constructor(){
         super();
     }
+
+    
+    componentDidMount(){
+        this.timer = setInterval(()=>{
+            console.log("Test")
+        },500)
+    }
+
+    componentWillUnmount(){
+        console.log("Component will unmount");
+        clearInterval(this.timer);
+    }
+
     render(){
         return(
             <div id="modal1" className="modal">

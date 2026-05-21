@@ -16,7 +16,8 @@ class App extends Component {
       high:"",
       low:"",
       icon:"",
-      isRaining:""
+      isRaining:"",
+      showModal:true
     }
     
     // non possiamo usare questo approccio perchè comunque la response 
@@ -50,6 +51,7 @@ class App extends Component {
     // inizializz la modale di Materialize (M)
     var instances = M.Modal.init(elems, options);;
   }
+
 
   // prevProps e prevState sono le proprietà e lo stato prima dell'update del Componente
   // snapshot ti restituisce delle info del tipo: a che posizione era il mouse prima di update
@@ -100,12 +102,23 @@ class App extends Component {
     })
   }
 
+  removeModal = ()=>{
+    this.setState({
+      showModal : false
+    })
+  }
+
+  componentWillUnmount(){
+    console.log("Component is about to be history")
+  }
+
   render(){
     const iconUrl = `openweathersito/${this.state.icon}.png`;
     return (
       <div className="App">
         <div className='row'>
           <div className='col s6 offset-s3'>
+            <button onClick={this.removeModal} className='btn'>Remove from DOM</button>
             <Headers temp = {this.state.temp} isRaining = {this.state.isRaining}/>
             {/* <h1>{this.state.temp}</h1>
             <h1>{this.state.isRaining}</h1> */}
