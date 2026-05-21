@@ -126,8 +126,8 @@ class App extends Component {
                 <a href="#!" className="modal-close waves-effect waves-green btn-flat">Agree</a>
               </div>
             </div> */}
-            <Modal iconUrl={iconUrl} weather = {this.state.weather}
-            cityName = {this.state.cityName} high = {this.state.high}/>
+            {this.state.showModal ? <Modal iconUrl={iconUrl} weather = {this.state.weather}
+            cityName = {this.state.cityName} high = {this.state.high}/> : ""}
 
           </div>
         </div>
