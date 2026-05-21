@@ -2,6 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 import axios from "axios"
 import React, { Component } from 'react';
+import Modal from './Modal';
+import Headers from './Headers';
 
 class App extends Component {
   constructor(){
@@ -104,25 +106,29 @@ class App extends Component {
       <div className="App">
         <div className='row'>
           <div className='col s6 offset-s3'>
-            <h1>{this.state.temp}</h1>
-            <h1>{this.state.isRaining}</h1>
+            <Headers temp = {this.state.temp} isRaining = {this.state.isRaining}/>
+            {/* <h1>{this.state.temp}</h1>
+            <h1>{this.state.isRaining}</h1> */}
             {/* <!-- Modal Trigger --> */}
             <a className="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
             <form onSubmit={this.searchCity}>
               <input type='text' placeholder='Enter a City Name'/>
             </form>
             {/* <!-- Modal Structure --> */}
-            <div id="modal1" className="modal">
+            {/* <div id="modal1" className="modal">
               <div className="modal-content">
                 <h4>{this.state.cityName}</h4>
-                <p>High:{this.state.high} - Low:{this.state.low}</p>
+                <p>High:{this.state.high} - Low:{this.state.low}</p> */}
                 {/* <p>{this.state.weather} {this.state.icon}</p> */}
-                <p>{this.state.weather}<img>{iconUrl}</img></p>
+                {/* <p>{this.state.weather}<img>{iconUrl}</img></p>
               </div>
               <div className="modal-footer">
                 <a href="#!" className="modal-close waves-effect waves-green btn-flat">Agree</a>
               </div>
-            </div>
+            </div> */}
+            <Modal iconUrl={iconUrl} weather = {this.state.weather}
+            cityName = {this.state.cityName} high = {this.state.high}/>
+
           </div>
         </div>
       </div>
