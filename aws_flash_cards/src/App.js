@@ -8,12 +8,13 @@ import MultiCard from './components/MultiCard';
 import RandomWeighted from './components/RandomWeighted';
 import RegularCard from './components/RegularCard';
 
-
 class App extends Component {
   constructor(){
     super();
     this.state={
-      cardStyle:"Random"
+      cardStyle:"Random",
+      // quando user clicca su flashcards e  se va fatto i render flashcard o spinner
+      ready:false
     }   
   }
 
@@ -22,9 +23,17 @@ class App extends Component {
   // per dubbi, vedi lo screen.
   // Principalmente, lo stato di quizBar ci servirà anche per altri componenti appunto non padri/figli di quizX
   // qua lo stato viene modificato con la selezione dell'utente.
+  // mandato a quizBar
   userChoice = (cardStyle)=>{
     this.setState({
-      cardStyle
+      cardStyle,
+      ready: false
+    })
+  }
+
+  nowReady = ()=>{
+    this.setState({
+      ready:true
     })
   }
 
@@ -34,7 +43,7 @@ class App extends Component {
       <div className="App align-item-center d-flex">
         <div className='container'>
           <QuizBar userChoice={this.userChoice}/>
-          <FlashCard/>
+          <FlashCard cardStyle={this.state.cardStyle} nowReady = {this.nowReady} ready={this.state.ready}/>
         </div>
       </div>
     );

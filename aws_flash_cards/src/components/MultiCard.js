@@ -1,16 +1,30 @@
 import React from 'react'
 
 function MultiCard(props){
+
+    const question = props.questionData;
+    console.log(question);
+
+    const choices=['a','b','c','d'];
+
+    const options = question.options.map((option,i)=>{
+        return(<li key={i}>{choices[i]}, {option}</li>)
+    })
+
+    const answerIndex = question.options.indexOf(question.answer);
+    const answerLetter = choices[answerIndex];
+
     return(
         <>
             <div className='card-back'>
-                <div>AWS Service</div>
+                <div>{question.service}</div>
                 <ul className='multi'>
-                    options
+                    {options}
                 </ul>
             </div>
             <div className='card-front'>
-                Multi-Choice answer
+                {/* il punto qui è puramente visivo e non per usare funzioni */}
+                {answerLetter}. {question.answer}
             </div>
         </>
     )
