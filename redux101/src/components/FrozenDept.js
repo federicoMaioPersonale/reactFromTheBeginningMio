@@ -11,6 +11,8 @@ class FrozenDept extends Component{
 
     increment = (operation, index)=>{
         // console.log(operation,index);
+        // quando questa cosa runna, parte il frozenReducer perchè abbiamo legato il tutto con dispatch
+        // mapDispatchToProps
         this.props.updateFrozen(operation, index);
     }
 

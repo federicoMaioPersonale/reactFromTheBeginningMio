@@ -17,6 +17,7 @@ const seedData = [
     }
 ]
 
+// sto codice runna quando l'action lo richiama
 export default (state = seedData, action)=>{
     console.log("Frozen Reducer is running!");
     console.log(action);
