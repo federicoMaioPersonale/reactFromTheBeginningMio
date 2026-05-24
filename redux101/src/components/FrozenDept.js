@@ -41,6 +41,8 @@ function mapStateToProps(state){
     // mapStateToProps returns an object, with:
     // property is the local prop name to this component
     // value will be the property in the root reducer... ie, a peice of the store 
+    // stiamo legando lo stato "frozen", che risiete nel rootReducer, in frozendata,
+    // che viene poi usato nei component come proprietà. frozenreducer utilizza lo state e lo inizializza a seedData
     return {
         frozenData: state.frozen,
     }    
@@ -54,6 +56,8 @@ function mapDispatchToProps(dispatch){
     // each property will be a local prop
     // each value will be a function that is dispatch when run
     //2nd arg or bindActionCreators is teh dispatch
+    // il valore della proprietà updateFrozen (anch'esso chiamato updateFrozen, pensa te che chiarezza
+    // ) è quello che sta in frozenInvUpdate
     return bindActionCreators({
         updateFrozen: updateFrozen
     }, dispatch)
