@@ -9,6 +9,7 @@ function Help(props){
     return(
     <div>
         <div>
+            {/* questi servono come link per l'appunto, per raggiungere l'endpoint */}
             <Link to="/help/customer"/>
             <Link to="/help/host"/>
         </div>
