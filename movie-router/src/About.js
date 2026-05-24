@@ -1,8 +1,9 @@
-import React from "react";
+import React from 'react';
 
 function About(props){
+    console.log(props);
     return(
-        <h1>{props.title}</h1>
+        <h1>About page!</h1>
     )
 }
 
